@@ -1882,12 +1882,13 @@
 /turf/simulated/floor/tiled/airless,
 /area/slavers_base/hallway)
 "fp" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/door/airlock/double/glass{
+	name = "Shuttle Bay Airlock"
+	},
 /turf/simulated/floor/airless/ceiling,
 /area/slavers_base/hangar)
 "fq" = (
-/obj/machinery/door/airlock/external,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1922,9 +1923,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/door/airlock{
-	name = "Power/atmos"
-	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -1953,22 +1951,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/airless,
-/area/slavers_base/hallway)
-"fw" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/door/airlock{
-	name = "West hallway"
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -2070,6 +2052,9 @@
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
+/obj/structure/sign/warning/airlock{
+	pixel_y = 24
+	},
 /turf/simulated/floor/airless/ceiling,
 /area/slavers_base/maint)
 "fH" = (
@@ -2129,10 +2114,10 @@
 /turf/simulated/floor/airless/ceiling,
 /area/slavers_base/powatm)
 "fR" = (
-/obj/machinery/door/airlock{
-	name = "Power/atmos"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/double{
+	name = "Power/Atmos"
+	},
 /turf/simulated/floor/airless/ceiling,
 /area/slavers_base/hallway)
 "fS" = (
@@ -2155,10 +2140,10 @@
 /turf/simulated/floor/tiled/airless,
 /area/slavers_base/hallway)
 "fV" = (
-/obj/machinery/door/airlock{
-	name = "West hallway"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/double{
+	name = "West Hallway"
+	},
 /turf/simulated/floor/tiled/airless,
 /area/slavers_base/hallway)
 "fW" = (
@@ -2265,19 +2250,21 @@
 /turf/simulated/floor/tiled/airless,
 /area/slavers_base/dorms)
 "gk" = (
-/obj/machinery/door/airlock{
-	name = "Southern hallway"
+/obj/machinery/door/airlock/external/glass{
+	autoset_access = 0;
+	id_tag = "slaver_south_airlock_external";
+	locked = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/tiled/airless,
-/area/slavers_base/hallway)
+/turf/simulated/floor/airless/ceiling,
+/area/slavers_base/maint)
 "gl" = (
-/obj/machinery/door/airlock{
-	name = "Southern hallway"
+/obj/machinery/door/airlock/external/glass{
+	autoset_access = 0;
+	id_tag = "slaver_south_airlock_internal";
+	locked = 1
 	},
-/turf/simulated/floor/tiled/airless,
-/area/slavers_base/hallway)
+/turf/simulated/floor/airless/ceiling,
+/area/slavers_base/maint)
 "gm" = (
 /obj/machinery/door/airlock{
 	name = "Slave trade area"
@@ -3536,8 +3523,8 @@
 "jQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/airlock{
-	name = "Southern hallway"
+/obj/machinery/door/airlock/double{
+	name = "Southern Hallway"
 	},
 /turf/simulated/floor/tiled/airless,
 /area/slavers_base/hallway)
@@ -3646,9 +3633,6 @@
 /turf/simulated/floor/tiled/airless,
 /area/slavers_base/hallway)
 "ki" = (
-/obj/machinery/door/airlock{
-	name = "Slave trade area"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -3700,7 +3684,7 @@
 /turf/simulated/floor/tiled/airless,
 /area/slavers_base/hallway)
 "kr" = (
-/obj/machinery/door/airlock{
+/obj/machinery/door/airlock/double{
 	name = "Slave trade area"
 	},
 /turf/simulated/floor/tiled/airless,
@@ -3742,18 +3726,25 @@
 /turf/simulated/floor/tiled/white,
 /area/slavers_base/dorms)
 "kA" = (
-/obj/machinery/door/airlock{
-	name = "Customers entry"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/double{
+	name = "Customers Entry"
+	},
 /turf/simulated/floor/tiled/airless,
 /area/slavers_base/hallway)
 "kB" = (
-/obj/machinery/door/airlock{
-	name = "Customers entry"
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	id_tag = "solar_port";
+	pixel_y = null;
+	tag_airpump = "solar_port_pump";
+	tag_chamber_sensor = "solar_port_sensor";
+	tag_exterior_door = "slaver_south_airlock_external";
+	tag_interior_door = "slaver_south_airlock_internal";
+	dir = 4;
+	pixel_x = -20
 	},
-/turf/simulated/floor/tiled/airless,
-/area/slavers_base/hallway)
+/turf/simulated/floor/airless/ceiling,
+/area/slavers_base/maint)
 "kC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -3768,8 +3759,8 @@
 /turf/simulated/floor/airless/ceiling,
 /area/slavers_base/maint)
 "kE" = (
-/obj/machinery/door/airlock{
-	name = "Exchange area"
+/obj/machinery/door/airlock/double{
+	name = "Exchange Area"
 	},
 /turf/simulated/floor/airless/ceiling,
 /area/slavers_base/maint)
@@ -3817,12 +3808,33 @@
 /turf/simulated/floor/airless/ceiling,
 /area/slavers_base/maint)
 "kO" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external/glass{
+	autoset_access = 0;
+	id_tag = "slaver_south_airlock_external";
+	locked = 1
+	},
+/obj/machinery/button/access/interior{
+	id_tag = "solar_port";
+	name = "exterior access button";
+	pixel_x = -20;
+	pixel_y = -22;
+	command = "cycle_exterior"
+	},
 /turf/simulated/floor/airless/ceiling,
 /area/slavers_base/maint)
 "kP" = (
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/door/airlock/external/glass{
+	autoset_access = 0;
+	id_tag = "slaver_south_airlock_internal";
+	locked = 1
+	},
+/obj/machinery/button/access/interior{
+	id_tag = "solar_port";
+	name = "interior access button";
+	pixel_x = 20;
+	pixel_y = 23
+	},
 /turf/simulated/floor/airless/ceiling,
 /area/slavers_base/maint)
 "kQ" = (
@@ -19170,9 +19182,9 @@ gI
 gI
 kH
 gI
-kO
+gl
 kH
-gI
+kB
 kO
 ag
 ag
@@ -19375,7 +19387,7 @@ kL
 kP
 kS
 kU
-kO
+gk
 ag
 ag
 ag
@@ -19551,7 +19563,7 @@ dS
 eq
 eq
 cS
-fw
+fv
 fV
 gi
 gi
@@ -19755,7 +19767,7 @@ er
 er
 fx
 fW
-gk
+jQ
 gF
 er
 hb
@@ -19957,7 +19969,7 @@ eT
 fo
 fy
 fo
-gl
+kq
 gG
 fo
 fo
@@ -19970,10 +19982,10 @@ fo
 fo
 ju
 jH
-gl
+kq
 kh
 kq
-kB
+kq
 gI
 gI
 fJ
@@ -20176,7 +20188,7 @@ hd
 ki
 kr
 hd
-kE
+gI
 kE
 fJ
 fJ
@@ -20984,7 +20996,7 @@ jS
 jx
 ku
 hd
-kE
+gI
 kE
 fJ
 gI
@@ -26006,12 +26018,12 @@ ad
 cm
 cs
 cs
-cE
-cI
-cI
-cI
-cI
-ed
+cD
+cs
+cs
+cs
+cs
+ec
 cs
 cs
 cm
@@ -26208,12 +26220,12 @@ ad
 cm
 cs
 cs
+cD
 cs
 cs
 cs
 cs
-cs
-cs
+ec
 cs
 cs
 cm
@@ -26408,16 +26420,16 @@ ad
 ad
 ad
 cm
-cu
-cu
-cu
-cu
-cu
-cu
-cu
-cu
-cu
-cu
+cs
+cs
+cE
+cI
+cI
+cI
+cI
+ed
+cs
+cs
 cm
 ad
 ad
@@ -26609,18 +26621,18 @@ ad
 ad
 ad
 ad
-ad
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ad
+cm
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cm
 ad
 ad
 ad
@@ -26811,18 +26823,18 @@ ad
 ad
 ad
 ad
-ad
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ad
+cm
+cu
+cu
+cu
+cu
+cu
+cu
+cu
+cu
+cu
+cu
+cm
 ad
 ad
 ad
